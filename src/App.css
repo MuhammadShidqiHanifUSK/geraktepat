@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #edf3f4;
+  background: #0b1115;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.app {
+  width: min(1120px, 92%);
+  margin: auto;
+  padding-bottom: 28px;
+}
+
+.navbar {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #253238;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Manrope", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.brand span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #a8f36c;
+  color: #13200e;
+}
+
+.nav-label,
+.eyebrow {
+  color: #a8f36c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.hero {
+  padding: 48px 0 34px;
+}
+.hero h1 {
+  margin: 12px 0;
+  font:
+    800 clamp(34px, 5vw, 56px)/1.12 "Manrope",
+    sans-serif;
+  letter-spacing: -2px;
+}
+.hero h1 span {
+  color: #a8f36c;
+}
+.subtitle,
+.muted {
+  color: #9baeb4;
+  line-height: 1.7;
+}
+.subtitle {
+  max-width: 560px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 20px;
+}
+
+.panel {
+  border: 1px solid #29383e;
+  border-radius: 20px;
+  padding: 24px;
+  background: #111b20;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.panel h2 {
+  font:
+    700 21px "Manrope",
+    sans-serif;
+  margin: 8px 0 18px;
+}
+.panel-heading .eyebrow,
+.results-panel > .eyebrow {
+  margin: 0;
+}
+
+.status {
+  color: #a8f36c;
+  background: #233321;
+  border-radius: 20px;
+  padding: 8px 10px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.camera {
+  min-height: 265px;
+  border: 1px dashed #40534b;
+  border-radius: 15px;
+  background: radial-gradient(
+    ellipse at center,
+    #24382d 0%,
+    #14221e 42%,
+    #0e171b 80%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 22px;
+  position: relative;
+}
+
+.person {
+  font-size: 65px;
+  margin-bottom: 10px;
+}
+.camera-message strong {
+  font-size: 17px;
+}
+.camera-message p {
+  max-width: 340px;
+  color: #a5b6b5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.camera-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 10px;
+  color: #b8c8c3;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+.controls label {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  color: #bdc9cc;
+}
+select,
+button {
+  border-radius: 10px;
+  padding: 13px;
+}
+select {
+  color: #edf3f4;
+  background: #1a282d;
+  border: 1px solid #35474d;
+  min-width: 0;
+}
+button {
+  border: 0;
+  background: #a8f36c;
+  color: #13200e;
+  font-weight: 800;
+  cursor: pointer;
+}
+button:hover {
+  background: #bcff89;
+}
+
+.muted {
+  font-size: 13px;
+  margin: -6px 0 24px;
+}
+.metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #29383e;
+  font-size: 13px;
+}
+.metric span {
+  color: #9baeb4;
+}
+.metric strong {
+  text-align: right;
+}
+
+.tip {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #202c25;
+}
+.tip > span {
+  color: #a8f36c;
+  font-size: 22px;
+}
+.tip strong {
+  font-size: 13px;
+}
+.tip p {
+  margin: 6px 0 0;
+  color: #a8b8ae;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  color: #687b80;
+  font-size: 12px;
+  padding: 30px 0 0;
+}
+
+@media (max-width: 760px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding-top: 34px;
+  }
+  .nav-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .panel {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+  .controls label {
+    grid-column: auto;
+  }
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+}
