@@ -272,3 +272,77 @@ footer {
     letter-spacing: -1px;
   }
 }
+
+/* landing page */
+.landing-page {
+  min-height: 70vh;
+}
+
+.landing-hero {
+  padding: 90px 0 76px;
+}
+
+.landing-hero .eyebrow {
+  margin-bottom: 18px;
+}
+
+.landing-hero h1 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+}
+
+.landing-hero h1 span {
+  color: #a8f36c;
+}
+
+.landing-hero .subtitle {
+  max-width: 570px;
+  margin: 24px 0 0;
+  color: #9baeb4;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.landing-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.landing-actions button {
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.landing-actions a {
+  color: #edf3f4;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.landing-actions a:hover {
+  color: #a8f36c;
+}
+
+@media (max-width: 640px) {
+  .landing-hero {
+    padding: 56px 0 48px;
+  }
+
+  .landing-hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .landing-hero .subtitle {
+    font-size: 14px;
+  }
+}
