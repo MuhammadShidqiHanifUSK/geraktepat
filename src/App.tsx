@@ -1,9 +1,16 @@
 import { useState } from "react";
 import "./App.css";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   const [latihan, setLatihan] = useState("Squat");
   const [mulai, setMulai] = useState(false);
+  const [halaman, setHalaman] = useState("landing");
+
+  // Tampilkan Landing Page terlebih dahulu
+  if (halaman === "landing") {
+    return <LandingPage onStart={() => setHalaman("latihan")} />;
+  }
 
   return (
     <main className="app">
@@ -11,16 +18,19 @@ function App() {
         <div className="brand">
           <span>G</span> GerakTepat
         </div>
+
         <div className="nav-label">SMART WORKOUT ASSISTANT</div>
       </nav>
 
       <section className="hero">
         <p className="eyebrow">LATIHAN LEBIH CERDAS</p>
+
         <h1>
           Perbaiki Gerakanmu.
           <br />
           <span>Capai Targetmu.</span>
         </h1>
+
         <p className="subtitle">
           Latihan bodyweight dengan panduan dan evaluasi gerakan untuk
           membantumu berlatih dengan lebih tepat.
@@ -34,26 +44,31 @@ function App() {
               <p className="eyebrow">AREA LATIHAN</p>
               <h2>Analisis Gerakan</h2>
             </div>
+
             <span className="status">{mulai ? "● DEMO AKTIF" : "● SIAP"}</span>
           </div>
 
           <div className="camera">
             <div className="person">🧍</div>
+
             <div className="camera-message">
               <strong>
                 {mulai ? "Mode demo sedang berjalan" : "Siap untuk bergerak?"}
               </strong>
+
               <p>
                 {mulai
                   ? `Latihan ${latihan} dipilih. Ikuti gerakan dengan posisi tubuh yang nyaman.`
                   : "Pilih latihan, lalu tekan tombol mulai untuk mencoba demo."}
               </p>
             </div>
+
             <span className="camera-tag">DEMO MODE</span>
           </div>
 
           <div className="controls">
             <label htmlFor="exercise">Pilih jenis latihan</label>
+
             <select
               id="exercise"
               value={latihan}
@@ -67,8 +82,9 @@ function App() {
               <option>Lunges</option>
               <option>Plank</option>
             </select>
+
             <button onClick={() => setMulai(!mulai)}>
-              {mulai ? "Hentikan Demo" : "▶  Mulai Latihan"}
+              {mulai ? "Hentikan Demo" : "▶ Mulai Latihan"}
             </button>
           </div>
         </div>
@@ -76,6 +92,7 @@ function App() {
         <aside className="panel results-panel">
           <p className="eyebrow">RINGKASAN</p>
           <h2>Hasil Analisis</h2>
+
           <p className="muted">
             Hasil akan ditampilkan di sini saat fitur analisis gerakan
             diimplementasikan.
@@ -85,10 +102,12 @@ function App() {
             <span>Jenis latihan</span>
             <strong>{latihan}</strong>
           </div>
+
           <div className="metric">
             <span>Status sesi</span>
             <strong>{mulai ? "Demo aktif" : "Belum dimulai"}</strong>
           </div>
+
           <div className="metric">
             <span>Jumlah repetisi</span>
             <strong>—</strong>
@@ -96,6 +115,7 @@ function App() {
 
           <div className="tip">
             <span>✦</span>
+
             <div>
               <strong>Tips latihan</strong>
               <p>
@@ -106,6 +126,18 @@ function App() {
           </div>
         </aside>
       </section>
+
+      <div className="landing-actions">
+        <button
+          type="button"
+          onClick={() => {
+            setMulai(false);
+            setHalaman("landing");
+          }}
+        >
+          ← Kembali ke Beranda
+        </button>
+      </div>
 
       <footer>GerakTepat · Prototype UTS POPL · Frontend Demo</footer>
     </main>
